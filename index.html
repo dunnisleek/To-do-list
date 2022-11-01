@@ -1,0 +1,33 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/vue@next" defer></script>
+    <script src="app.js" defer></script>
+    <title>Document</title>
+
+</head>
+<body>
+   
+<section id="user-goal"  class="user">
+    <h2>My course Goal</h2>
+    <input type="text"  v-model="enteredGoalValue">
+    <button @click="addGoal">add goal</button>
+    <p v-if="goal.length === 0">No goals has been added yet</p>
+    <ul v-else>  
+        <li v-for="(goalItems, index) in goal"  @click="removeGoal(index)">
+          {{index}} - {{goalItems}} 
+        </li>
+    </ul>
+  <!-- <ul>
+    <li v-for="num in 10">{{num}}</li>
+  </ul> -->
+    <!-- key method -->
+    <!-- <ul>
+        <li v-for="(value, key, index) in {name:'Dunni' , course:'computer'}">{{key}} :{{value}}</li>
+    </ul> -->
+</section>
+</body>
+</html>
